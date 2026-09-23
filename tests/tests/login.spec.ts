@@ -10,4 +10,10 @@ test('search on Google', async ({ page }) => {
   await page.keyboard.press('Enter');
 
   await expect(page).toHaveTitle(/Playwright/);
+
+await page.keyboard.press('Enter');
+
+await expect(page).toHaveTitle(/Playwright/);
+
+await expect(page.getByText('Playwright', { exact: false }).first()).toBeVisible();
 });
